@@ -1,0 +1,26 @@
+image:
+  repository: macdoncml.azurecr.io/firecrawl-api
+  tag: latest
+  pullPolicy: Always
+
+replicaCount: 1
+
+service:
+  type: ClusterIP
+  port: 82
+  targetPort: 8002
+
+ingress:
+  enabled: true
+  hosts:
+    - host: api.macdonml.com
+      paths:
+        - path: /firecrawl_api
+          pathType: Prefix
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: "letsencrypt-dns"
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/proxy-buffering:        "off"
+    nginx.ingress.kubernetes.io/proxy-read-timeout:     "3600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout:     "3600"

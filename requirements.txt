@@ -1,0 +1,5 @@
+fastmcp
+requests
+fastapi
+uvicorn
+firecrawl-py

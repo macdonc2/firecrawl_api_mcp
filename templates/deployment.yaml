@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastmcp-firecrawl-api
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: fastmcp-firecrawl-api
+  template:
+    metadata:
+      labels:
+        app: fastmcp-firecrawl-api
+    spec:
+      containers:
+      - name: fastmcp-firecrawl-api
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        ports:
+        - containerPort: {{ .Values.service.targetPort }}

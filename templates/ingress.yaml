@@ -1,0 +1,23 @@
+{{- if .Values.ingress.enabled }}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: fastmcp-firecrawl-api-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: "letsencrypt-dns"
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: "api.macdonml.com"
+      http:
+        paths:
+          - path: "/firecrawl_api"
+            pathType: Prefix
+            backend:
+              service:
+                name: fastmcp-firecrawl-api
+                port:
+                  number: {{ .Values.service.port }}
+{{- end }}

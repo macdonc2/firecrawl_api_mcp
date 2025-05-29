@@ -1,0 +1,89 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+env/
+venv/
+.venv/
+ENV/
+.ENV/
+env.bak/
+venv.bak/
+
+# Python environment files
+*.env
+.env.*       # e.g. .env.local, .env.production
+
+# Alembic migrations cache
+alembic/versions/__pycache__/
+
+# VSCode settings
+.vscode/
+.vscode/*
+
+# PyCharm settings
+.idea/
+
+# Coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# Docker
+*.log
+docker-compose.override.yml
+docker-compose.*.yml
+.env.docker
+**/Dockerfile.*
+/docker-compose*.yml
+docker-compose*.yaml
+
+# Kubernetes / Helm
+charts/**/templates/*.bak
+charts/**/.DS_Store
+charts/**/values.local.yaml
+charts/**/values.*.local.yaml
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# Editor backups
+*~
+*.swp
+.*.sw?
